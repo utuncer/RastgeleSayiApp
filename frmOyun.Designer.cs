@@ -87,7 +87,6 @@
             lblKonum.TabIndex = 0;
             lblKonum.Text = "asd";
             lblKonum.TextAlign = ContentAlignment.MiddleRight;
-            lblKonum.Click += lblKonum_Click;
             // 
             // labelScore
             // 

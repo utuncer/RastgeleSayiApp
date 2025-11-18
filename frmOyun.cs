@@ -18,21 +18,17 @@ namespace RastgeleSayiToplamApp
         int SinirY = 0;
         int hataPayi = 0;
         int Score = 0;
-        string kullaniciAd;
-        string kullaniciSoyad;
         Random random = new Random();
 
         public frmOyun(string KullaniciAd, string KullaniciSoyad)
         {
-            kullaniciAd = KullaniciAd.ToUpper();
-            kullaniciSoyad = KullaniciSoyad.ToUpper();
             InitializeComponent();
+            lblAd.Text = KullaniciAd.ToUpper();
+            lblSoyad.Text = KullaniciSoyad.ToUpper();
         }
 
         private void frmOyun_Load(object sender, EventArgs e)
         {
-            lblAd.Text = kullaniciAd;
-            lblSoyad.Text = kullaniciSoyad;
             scoreGuncelle(btnOyun);
             scoreGuncelle(labelScore);
         }
@@ -67,29 +63,22 @@ namespace RastgeleSayiToplamApp
         {
             panelEkran.Height = this.ClientSize.Height;
             panelEkran.Location = new Point(this.ClientSize.Width - panelEkran.Width, 0);
+            lblKonum.Location = new Point(0, panelEkran.Height-lblKonum.Height);
         }
 
         private void frmOyun_MouseMove(object sender, MouseEventArgs e)
         {
             lblKonum.Text = $"X: {e.X}, Y: {e.Y}";
-
         }
 
         private void panelEkran_MouseMove(object sender, MouseEventArgs e)
         {
             lblKonum.Text = $"X: {e.X}, Y: {e.Y}";
-
         }
-
 
         private void frmOyun_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        private void lblKonum_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
