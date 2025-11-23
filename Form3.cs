@@ -19,7 +19,7 @@ namespace RastgeleSayiToplamApp
         private void button1_Click(object sender, EventArgs e)
         {
 
-            form2.Text = txtFormDegistir.Text;
+             form2.Text = txtFormDegistir.Text;
 
         }
     }
